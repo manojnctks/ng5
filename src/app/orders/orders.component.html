@@ -18,13 +18,13 @@
         </ul>
         <form>
         Product: 
-        <input type="text" class="txt" name="name" placeholder="Please input something"  [(ngModel)] = "id" required (blur)="findItem(id)">{{msg}}<br/>
+        <input type="text" class="txt" name="name" placeholder="Please input something"  [(ngModel)] = "pName" required (blur)="findItem(pName)">{{msg}}<br/>
         <span *ngIf="product">
-          Enter Qty: <input type="text" class="txt" name="name" placeholder="Only numeric.."  [(ngModel)] = "qty" required (blur)="findItem(id)">
+          Enter Qty: <input type="text" class="txt" name="name" placeholder="Only numeric.."  [(ngModel)] = "qty" required >
         
          {{product.PName}}, {{product.Qty}} qty is available in stock.</span><br/>
 
-        <input type="submit" class="btn" [value]="btnText" (click)="purchase(id,qty)"/>{{errorMsg}}
+        <input type="submit" class="btn" [value]="btnText" (click)="purchase(qty)"/>{{errorMsg}}
         </form>
 
        

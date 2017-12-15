@@ -21,6 +21,7 @@ export class OrdersComponent implements OnInit {
   errorMsg:string;
   id:number;
   qty:number;
+  pName:string;
   constructor(private route:ActivatedRoute,private router:Router,private _data:DataService) { 
     this.route.params.subscribe(res=> console.log(res.id));
   }
@@ -30,13 +31,13 @@ export class OrdersComponent implements OnInit {
      this._data.customer.subscribe(res=>this.customers=res) ;
   }
 
-  findItem(id:number){
+  findItem(pName:string){
      this.product=new Product();
-     this.product = this.products.find(c=>c.Id==id);    
+     this.product = this.products.find(c=>c.PName==pName);    
     this.msg="Available....";
   }
 
-  purchase(id:number,qty:number){
+  purchase(qty:number){
     if(qty<=this.product.Qty)
     { 
       this.product.Qty-=qty;
