@@ -1,0 +1,31 @@
+
+<div>
+<p>
+    Available products list 
+    </p>
+    <!-- <table *ngFor="let prod of products">
+      <tr>
+        <td> {{prod.PName}} Rs. {{prod.Price}}</td>        
+        <td> Available Qty {{prod.Qty}}</td>
+      </tr>
+    </table> -->
+    <ul>
+
+            <li class="li" *ngFor="let prod of products">
+                {{prod.PName}} cost you Rs {{prod.Price}}      {{prod.qty}}/-
+
+            </li>
+        </ul>
+        <form>
+        Product: 
+        <input type="text" class="txt" name="name" placeholder="Please input something"  [(ngModel)] = "id" required (blur)="findItem(id)">{{msg}}<br/>
+        <span *ngIf="product">
+          Enter Qty: <input type="text" class="txt" name="name" placeholder="Only numeric.."  [(ngModel)] = "qty" required (blur)="findItem(id)">
+        
+         {{product.PName}}, {{product.Qty}} qty is available in stock.</span><br/>
+
+        <input type="submit" class="btn" [value]="btnText" (click)="purchase(id,qty)"/>{{errorMsg}}
+        </form>
+
+       
+    </div>

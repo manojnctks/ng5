@@ -1,0 +1,50 @@
+.container{
+    display: grid;
+    width: 50%;            
+    grid-template-columns: 50% auto;    
+}
+.col{
+    padding: .2em 1.3em;
+}
+.color-dark{
+    background: #2885C4;
+}
+.color-light{
+    background: #57B3F1;
+}
+
+input.txt{
+border: 0;
+padding: 1em;
+width: 80%;
+margin-bottom: 2em;
+}
+input.btn{
+border: 0;
+display: block;
+padding: 1em 3em;
+color: #003A61;
+margin-bottom: 1em;
+background: #A5F883;
+}
+.life-container{
+    background: #3FA0E1;
+    padding: .5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.error{
+    border: 2;
+    color: red;
+    font-size: 12pt;
+    font-style: italic;
+}
+
+input:invalid {
+    border: 2px dashed red;
+  }
+  
+  input:valid {
+    border: 2px solid black;
+  }
+  

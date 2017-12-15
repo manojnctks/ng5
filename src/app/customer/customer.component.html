@@ -1,0 +1,48 @@
+<div class="container color-dark">
+  <div class="col">
+    <p>App bucket List item</p>
+  </div>
+  <div>
+    <p>Your bucket list({{itemCount}})</p>
+  </div>
+</div>
+<div class="container color-light" [@customers]="customers.length"> 
+  <div class="col">    
+    <div class="error">
+      <ul>
+      <li>{{errorMsg}}</li>
+      </ul>
+      </div>
+    <form #myForm="ngForm" novalidate>
+      
+
+      <table>
+        <tr>
+          <td><label>Enter Your Name  : </label></td>
+          <td><input type="text" class="txt" name="name" placeholder="Please input something"  [(ngModel)] = "name" required></td>   
+        </tr>
+        <tr>
+            <td><label>Enter Age  : </label></td>
+            <td><input type="text" class="txt" name="name" placeholder="only numeric.." [(ngModel)] = "age" /></td>   
+          </tr>
+          <tr>
+              <td><label>Intrested Gender  : </label></td>
+              <td><input type="text" class="txt" name="name" placeholder="Male/Female.." [(ngModel)] = "gender"/></td>      
+            </tr>    
+          <tr>
+            <td  colspan="2"><input type="submit" class="btn" [value]="btnText" (click)="addItem()"/>
+              <input type="submit" class="btn" [value]="btnRemove" (click)="removeItem()"/></td>         
+          </tr>      
+    </table>
+    </form>
+  </div>
+  <div class="col">
+  <p class="life-container" *ngFor='let cust of customers; let i=index;' (click)="removeItems(i)">
+    Hi {{cust.Name}}, your age is {{cust.Age}} intrested in {{cust.Gender}}
+  </p>
+  </div>
+ 
+          To know more about us click <a href='' (click)="sendMeABout()"><strong>here</strong></a>
+ 
+  
+</div>

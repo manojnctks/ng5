@@ -1,0 +1,45 @@
+<div class="container color-dark">
+    <div class="col">
+      <p>Product bucket List item</p>
+    </div>
+    <div>
+      <p>Product in stock({{itemCount}})</p>
+    </div>
+  </div>
+  <div class="container color-light" [@products]="products.length"> 
+    <div class="col">          
+      <form #myForm="ngForm" novalidate>  
+        <table>
+            <tr>
+                <td><label>Enter Id  : </label></td>
+                <td><input type="text" class="txt" name="name" placeholder="Please input something"  [(ngModel)] = "id" required></td>   
+              </tr>
+          <tr>
+            <td><label>Enter Product Name  : </label></td>
+            <td><input type="text" class="txt" name="name" placeholder="Please input something"  [(ngModel)] = "pName" required></td>   
+          </tr>
+          <tr>
+              <td><label>Enter Stock Qty  : </label></td>
+              <td><input type="text" class="txt" name="name" placeholder="only numeric.." [(ngModel)] = "qty" /></td>   
+            </tr>
+            <tr>
+                <td><label>Enter Price  : </label></td>
+                <td><input type="text" class="txt" name="name" placeholder="Male/Female.." [(ngModel)] = "price"/></td>      
+              </tr>    
+            <tr>
+              <td  colspan="2"><input type="submit" class="btn" [value]="btnText" (click)="addItem()"/>                
+            </tr>      
+      </table>
+      </form>
+    </div>
+    <div class="col">
+    <p class="life-container" *ngFor='let prod of products; let i=index;' (click)="removeItems(i)">
+     {{prod.PName}}, Rs. {{prod.Price}}/- Qty {{prod.Qty}}
+    </p>
+    </div>
+   
+            
+   
+    
+  </div>
+  
